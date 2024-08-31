@@ -1,6 +1,6 @@
 import logging
 
-from app.agent import compiled_agent, get_agent
+from app.agent import get_agent
 from fastapi import HTTPException
 from langchain_core.messages import HumanMessage
 from langgraph.graph.state import CompiledStateGraph
