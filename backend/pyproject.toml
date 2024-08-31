@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "full-stack-langgraph-chat"
+version = "1.0.0"
+description = ""
+authors = ["Justin Largo <justinlargo7@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+uvicorn = "^0.30.6"
+fastapi = "^0.112.2"
+langchain = "^0.2.15"
+langgraph = "^0.2.15"
+langchain-google-genai = "^1.0.10"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
