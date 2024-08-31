@@ -1,13 +1,11 @@
 from typing import Annotated, TypedDict
 
-from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAI
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.graph.state import CompiledStateGraph
 
-load_dotenv()
 llm = GoogleGenerativeAI(model="gemini-1.5-flash")
 
 
