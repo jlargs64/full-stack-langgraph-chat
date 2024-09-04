@@ -4,16 +4,19 @@ version = "1.0.0"
 description = ""
 authors = ["Justin Largo <justinlargo7@gmail.com>"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
-uvicorn = "^0.30.6"
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
 fastapi = "^0.112.2"
 langchain = "^0.2.15"
 langgraph = "^0.2.15"
 langchain-google-genai = "^1.0.10"
 python-dotenv = "^1.0.1"
+pydantic-settings = "^2.4.0"
+alembic = "^1.13.2"
+sqlalchemy = "^2.0.34"
+psycopg2-binary = "^2.9.9"
 
 
 [build-system]

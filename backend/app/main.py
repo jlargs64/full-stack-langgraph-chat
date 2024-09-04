@@ -1,21 +1,16 @@
-import logging
-
-from app.agent_service import get_agent_service
+from app.router.agent import router as agents_router
+from app.router.user import router as users_router
 from fastapi import FastAPI
-from fastapi.responses import StreamingResponse
-from pydantic import BaseModel
+
+# Uncomment if using Alembic for migrations
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-agent_service = get_agent_service()
+
+app.include_router(router=agents_router)
+app.include_router(users_router)
 
 
-class AgentRequest(BaseModel):
-    user_input: str
-
-
-@app.post("/stream")
-async def stream(request: AgentRequest) -> StreamingResponse:
-    logging.info(request)
-    config = {"configurable": {"thread_id": "1"}}
-    stream = agent_service.stream_agent_output(request.user_input, config)
-    return StreamingResponse(stream, media_type="text/plain")
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the FastAPI with LangGraph example"}
