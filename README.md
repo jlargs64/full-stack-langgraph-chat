@@ -8,4 +8,4 @@
 ## How to run
 
 1. `poetry install --no-root`
-1. `docker-compose up --build`
+1. `docker-compose up --build --remove-orphans`
