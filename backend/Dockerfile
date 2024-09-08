@@ -1,6 +1,6 @@
 # Stage 1: Build stage
 FROM python:3.12.5-slim-bookworm AS builder
-
+LABEL maintainer="Justin Largo <justinlargo7@gmail.com>"
 # Set environment variables
 ENV POETRY_VERSION=1.8.3
 ENV POETRY_VIRTUALENVS_CREATE=false
